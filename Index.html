@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey form | Free for all to use </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+  <script type="text/javascript" src="//databroker.coremotives.com/Scripts/querystring.js"></script>
+  <script type="text/javascript" src="//databroker.coremotives.com/Scripts/rateit/jquery.rateit.min.js?v=2013-08-19"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('form.CoreMotives').submit(function() {
+        if (!ValidateRequiredFields(this)) return false;
+        var submitButton = $(this).find("input[type='submit']");
+        if (submitButton != null) {
+          if (submitButton.attr('disabled') == 'disabled') return false;
+          submitButton.attr('disabled', 'disabled');
+        }
+        coreMotives.initForm(this);
+        return true;
+      });
+      var qs = new Querystring();
+      $('#txtFirstName').val(qs.get("txtFirstName", ""));
+      $('#txtLastName').val(qs.get("txtLastName", ""));
+      $('#txtCompanyName').val(qs.get("txtCompanyName", ""));
+      $('#txtTelephone').val(qs.get("txtTelephone", ""));
+      $('#txtEmailAddress').val(qs.get("txtEmailAddress", ""));
+      $('#txtComments').val(qs.get("txtComments", ""));
+      $('#Q22').val(qs.get("Q22", ""));
+      $('input[name=Question19][value=' + qs.get("Question19", "") + ']').prop('checked', true);
+      if ($.isNumeric(qs.get("Question1", ""))) $('#Question1').val(parseInt(qs.get("Question1", "")));
+      if ($.isNumeric(qs.get("Question2", ""))) $('#Question2').val(parseInt(qs.get("Question2", "")));
+      if ($.isNumeric(qs.get("Question3", ""))) $('#Question3').val(parseInt(qs.get("Question3", "")));
+      if ($.isNumeric(qs.get("Question4", ""))) $('#Question4').val(parseInt(qs.get("Question4", "")));
+      $('div.rateit').rateit();
+    });
+  </script>
+
+  <script type="text/javascript" src="//databroker.coremotives.com/Styles/WebForms/form.js"></script>
+  <link rel="stylesheet" href="//databroker.coremotives.com/Styles/WebForms/form.css" type="text/css" />
+  <link rel="stylesheet" href="//databroker.coremotives.com/Scripts/rateit/rateit.css?v=2013-08-19" type="text/css"/>
+  <style type="text/css">
+
+  </style>
+
+</head>
+<body class="noI">
+<div id="container">
+  <form class="CoreMotives" method="post" enctype="multipart/form-data" action="//databroker.coremotives.com/WebCapture.aspx?cm_cid=01d60c03-47d8-e211-b434-00155d32390f&cm_iid=1584&cm_formid=b9e27eb2-49a5-e311-8684-000c293cd65c">
+    <ul>
+      <li class="complex">
+        <div>
+<span class="half left">
+<label class="desc" for="txtFirstName">First Name</label>
+<input id="txtFirstName" name="txtFirstName" type="text" class="field text full " maxlength="255" tabindex="1" value="" />
+</span>
+
+<span class="half right">
+<label class="desc" for="txtLastName">Last Name</label>
+<input id="txtLastName" name="txtLastName" type="text" class="field text full " maxlength="255" tabindex="2" value="" />
+</span>
+
+        </div>
+      </li>
+      <li>
+<label class="desc" for="txtCompanyName">Company</label>
+<div class="large">
+<input id="txtCompanyName" name="txtCompanyName" type="text" class="field text full " maxlength="255" tabindex="3" value="" />
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="txtTelephone">Phone</label>
+<div class="large">
+<input id="txtTelephone" name="txtTelephone" type="text" class="field text full " maxlength="255" tabindex="4" value="" />
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="txtEmailAddress">Email<span class="req">*</span></label>
+<div class="large">
+<input id="txtEmailAddress" name="txtEmailAddress" type="text" class="field text full  email" maxlength="255" tabindex="5" value="" />
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="txtComments">Comments</label>
+<div class="large">
+<textarea id="txtComments" name="txtComments" class="field textarea medium " rows="10" cols="50" tabindex="6"></textarea>
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="Question1">1. How satisfied are you, the employer, with Magnum?</label>
+<div class="large">
+<input type="text" id="Question1" name="Question1"/><div class="rateit star_blue" data-rateit-backingfld="#Question1" data-rateit-starwidth="16" data-rateit-starheight="16" data-rateit-resetable="true" data-rateit-ispreset="false" data-rateit-step="1" data-rateit-min="0" data-rateit-max="10"></div>
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="Question2">2. How satisfied would you say your employees are with Magnum?</label>
+<div class="large">
+<input type="text" id="Question2" name="Question2"/><div class="rateit star_red" data-rateit-backingfld="#Question2" data-rateit-starwidth="16" data-rateit-starheight="16" data-rateit-resetable="true" data-rateit-ispreset="false" data-rateit-step="1" data-rateit-min="0" data-rateit-max="10"></div>
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="Question3">3. Would you recommend Magnum to a business colleague?</label>
+<div class="large">
+<input type="text" id="Question3" name="Question3"/><div class="rateit star_red" data-rateit-backingfld="#Question3" data-rateit-starwidth="16" data-rateit-starheight="16" data-rateit-resetable="true" data-rateit-ispreset="false" data-rateit-step="1" data-rateit-min="0" data-rateit-max="10"></div>
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="Question4">4. At your next contract renewal, how likely is your company to renew with Magnum?</label>
+<div class="large">
+<input type="text" id="Question4" name="Question4"/><div class="rateit star_red" data-rateit-backingfld="#Question4" data-rateit-starwidth="16" data-rateit-starheight="16" data-rateit-resetable="true" data-rateit-ispreset="false" data-rateit-step="1" data-rateit-min="0" data-rateit-max="10"></div>
+</div>
+
+      </li>
+      <li>
+<div class="large">
+<label id="" class="desc">5 If benefits and their costs are the most important factors for considering a health insurance car</label>
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="Question19">19. Did your company conduct open enrollment meetings for employees to discuss benefits for the new</label>
+<div class="large">
+<div><span style="width:100%; padding-bottom:0px;"><input id="Question19_0" name="Question19" type="radio" class="field radio" value="83668" tabindex="12" /><label class="choice" for="Question19_0">Yes</label></span><span style="width:100%; padding-bottom:0px;"><input id="Question19_1" name="Question19" type="radio" class="field radio" value="60591" tabindex="13" /><label class="choice" for="Question19_1">No</label></span></div>
+</div>
+
+      </li>
+      <li>
+<label class="desc" for="Q22">22.   How can Magnum improve the open enrollment process for your company?</label>
+<div class="large">
+<textarea id="Q22" name="Q22" class="field textarea medium " rows="10" cols="50" tabindex="13"></textarea>
+</div>
+
+      </li>
+      <li class="buttons">
+        <div><input id="submitButton" name="submitButton" class="btTxt submit" type="submit" value="Submit"  /></div>
+      </li>
+    </ul>
+  </form>
+</div>
+<img id="bottom" src="//databroker.coremotives.com/Styles/WebForms/bottom.png" alt="" />
+<script type="text/javascript">
+  var path = (("https:" == document.location.protocol) ? "https://databroker.coremotives.com/databroker.js?version=2" : "http://cdn.coremotivesmarketing.com/databroker.js");
+  document.write(unescape("%3Cscript src='" + path + "' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var coreMotives = new DataBroker();
+    coreMotives.customerId = "01d60c03-47d8-e211-b434-00155d32390f";
+    coreMotives.instanceId = 1584;
+    coreMotives.formId = "b9e27eb2-49a5-e311-8684-000c293cd65c";
+    coreMotives.trackPageView();
+  } catch (e) { }
+</script>
+
+</body>
+</html>
