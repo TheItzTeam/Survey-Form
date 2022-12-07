@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Survey form | Free for all to use </title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
-  <script type="text/javascript" src="//databroker.coremotives.com/Scripts/querystring.js"></script>
-  <script type="text/javascript" src="//databroker.coremotives.com/Scripts/rateit/jquery.rateit.min.js?v=2013-08-19"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
+  <head>
+   <title>Survey form | Free for all to use </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+        <script type="text/javascript" src="//databroker.coremotives.com/Scripts/querystring.js"></script>
+          <script type="text/javascript" src="//databroker.coremotives.com/Scripts/rateit/jquery.rateit.min.js?v=2013-08-19"></script>
+            <script type="text/javascript">
+      $(document).ready(function() {
       $('form.CoreMotives').submit(function() {
-        if (!ValidateRequiredFields(this)) return false;
-        var submitButton = $(this).find("input[type='submit']");
-        if (submitButton != null) {
-          if (submitButton.attr('disabled') == 'disabled') return false;
+      if (!ValidateRequiredFields(this)) return false;
+      var submitButton = $(this).find("input[type='submit']");
+      if (submitButton != null) {
+      if (submitButton.attr('disabled') == 'disabled') return false;
           submitButton.attr('disabled', 'disabled');
         }
         coreMotives.initForm(this);
         return true;
       });
-      var qs = new Querystring();
-      $('#txtFirstName').val(qs.get("txtFirstName", ""));
-      $('#txtLastName').val(qs.get("txtLastName", ""));
-      $('#txtCompanyName').val(qs.get("txtCompanyName", ""));
-      $('#txtTelephone').val(qs.get("txtTelephone", ""));
-      $('#txtEmailAddress').val(qs.get("txtEmailAddress", ""));
-      $('#txtComments').val(qs.get("txtComments", ""));
-      $('#Q22').val(qs.get("Q22", ""));
-      $('input[name=Question19][value=' + qs.get("Question19", "") + ']').prop('checked', true);
-      if ($.isNumeric(qs.get("Question1", ""))) $('#Question1').val(parseInt(qs.get("Question1", "")));
-      if ($.isNumeric(qs.get("Question2", ""))) $('#Question2').val(parseInt(qs.get("Question2", "")));
-      if ($.isNumeric(qs.get("Question3", ""))) $('#Question3').val(parseInt(qs.get("Question3", "")));
-      if ($.isNumeric(qs.get("Question4", ""))) $('#Question4').val(parseInt(qs.get("Question4", "")));
-      $('div.rateit').rateit();
-    });
-  </script>
+       var qs = new Querystring();
+        $('#txtFirstName').val(qs.get("txtFirstName", ""));
+          $('#txtLastName').val(qs.get("txtLastName", ""));
+           $('#txtCompanyName').val(qs.get("txtCompanyName", ""));
+            $('#txtTelephone').val(qs.get("txtTelephone", ""));
+             $('#txtEmailAddress').val(qs.get("txtEmailAddress", ""));
+              $('#txtComments').val(qs.get("txtComments", ""));
+               $('#Q22').val(qs.get("Q22", ""));
+                $('input[name=Question19][value=' + qs.get("Question19", "") + ']').prop('checked', true);
+                 if ($.isNumeric(qs.get("Question1", ""))) $('#Question1').val(parseInt(qs.get("Question1", "")));
+                    if ($.isNumeric(qs.get("Question2", ""))) $('#Question2').val(parseInt(qs.get("Question2", "")));
+                      if ($.isNumeric(qs.get("Question3", ""))) $('#Question3').val(parseInt(qs.get("Question3", "")));
+                        if ($.isNumeric(qs.get("Question4", ""))) $('#Question4').val(parseInt(qs.get("Question4", "")));
+                    $('div.rateit').rateit();
+                 });
+               </script>
 
-  <script type="text/javascript" src="//databroker.coremotives.com/Styles/WebForms/form.js"></script>
-  <link rel="stylesheet" href="//databroker.coremotives.com/Styles/WebForms/form.css" type="text/css" />
-  <link rel="stylesheet" href="//databroker.coremotives.com/Scripts/rateit/rateit.css?v=2013-08-19" type="text/css"/>
-  <style type="text/css">
+               <script type="text/javascript" src="//databroker.coremotives.com/Styles/WebForms/form.js"></script>
+                <link rel="stylesheet" href="//databroker.coremotives.com/Styles/WebForms/form.css" type="text/css" />
+                  <link rel="stylesheet" href="//databroker.coremotives.com/Scripts/rateit/rateit.css?v=2013-08-19" type="text/css"/>
+                    <style type="text/css">
 
-  </style>
+                     </style>
 
-</head>
-<body class="noI">
+                      </head>
+                       <body class="noI">
 <div id="container">
   <form class="CoreMotives" method="post" enctype="multipart/form-data" action="//databroker.coremotives.com/WebCapture.aspx?cm_cid=01d60c03-47d8-e211-b434-00155d32390f&cm_iid=1584&cm_formid=b9e27eb2-49a5-e311-8684-000c293cd65c">
     <ul>
@@ -148,8 +148,8 @@
 <script type="text/javascript">
   var path = (("https:" == document.location.protocol) ? "https://databroker.coremotives.com/databroker.js?version=2" : "http://cdn.coremotivesmarketing.com/databroker.js");
   document.write(unescape("%3Cscript src='" + path + "' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
+       </script>
+       <script type="text/javascript">
   try {
     var coreMotives = new DataBroker();
     coreMotives.customerId = "01d60c03-47d8-e211-b434-00155d32390f";
